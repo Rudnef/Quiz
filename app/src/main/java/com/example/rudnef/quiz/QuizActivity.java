@@ -24,7 +24,6 @@ public class QuizActivity extends AppCompatActivity {
     int right = 0;
     int point = 0;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
