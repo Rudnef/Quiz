@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="right_answer">
+        <item>красава</item>
+        <item>правильно</item>
+        <item>молодец</item>
+    </string-array>
+
+    <string-array name="wrong_answer">
+        <item>поздравляю Шарик, ты балбес</item>
+        <item>хы, LOL</item>
+        <item>попробуй еще раз</item>
+    </string-array>
+
+</resources>

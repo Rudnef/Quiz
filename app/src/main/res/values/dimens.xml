@@ -1,0 +1,28 @@
+<resources>
+
+    <dimen name="activity_horizontal_margin_8">8dp</dimen>
+    <dimen name="activity_horizontal_margin_12">12dp</dimen>
+    <dimen name="activity_horizontal_margin_16">16dp</dimen>
+    <dimen name="activity_horizontal_margin_20">20dp</dimen>
+    <dimen name="activity_horizontal_margin_24">24dp</dimen>
+    <dimen name="activity_horizontal_margin_28">28dp</dimen>
+    <dimen name="activity_horizontal_margin_32">32dp</dimen>
+    <dimen name="activity_horizontal_margin_64">64dp</dimen>
+
+    <dimen name="activity_vertical_margin_8">8dp</dimen>
+    <dimen name="activity_vertical_margin_12">12dp</dimen>
+    <dimen name="activity_vertical_margin_16">16dp</dimen>
+    <dimen name="activity_vertical_margin_20">20dp</dimen>
+    <dimen name="activity_vertical_margin_24">24dp</dimen>
+    <dimen name="activity_vertical_margin_28">28dp</dimen>
+    <dimen name="activity_vertical_margin_32">32dp</dimen>
+    <dimen name="activity_vertical_margin_64">62dp</dimen>
+
+    <dimen name="txt_size_8">8sp</dimen>
+    <dimen name="txt_size_12">12sp</dimen>
+    <dimen name="txt_size_16">16sp</dimen>
+    <dimen name="txt_size_20">20sp</dimen>
+    <dimen name="txt_size_24">24sp</dimen>
+    <dimen name="txt_size_28">28sp</dimen>
+
+</resources>

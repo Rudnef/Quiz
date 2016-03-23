@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cards">
+        <item>Окунь - хищная рыба/1</item>
+        <item>2 + 2 = 5/0</item>
+        <item>Александр Лиховидов больше любит электронные книги, чем бумажные/0</item>
+        <item>Toast - это кусок жареного хлеба/0</item>
+        <item>Toast всегда начинается со слов: "Высоко-высоко в горах..."/0</item>
+        <item>Toast - короткое сообщение/1</item>
+        <item>int a = 5,\n int b = 6,\n int c = a + b;\n c = 10?/0</item>
+        <item>огонь горячий/1</item>
+        <item>int это примитивная переменная/1</item>
+        <item>boolean это переменная с плавающей точкой/0</item>
+        <item>String это массив/0</item>
+        <item>Intent - класс, объекты которого используются для взаимодейтвия между отдельными частями Android приложения/1</item>
+    </string-array>
+</resources>

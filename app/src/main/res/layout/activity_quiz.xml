@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_0"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/quiz_pic_background"
+    tools:context="com.example.rudnef.quiz.MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/rl_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/info_background"
+        >
+
+
+        <TextView
+            android:id="@+id/tv_category"
+            android:textSize="@dimen/txt_size_20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/categoria"
+            android:layout_marginLeft="@dimen/txt_size_12"
+            android:layout_marginTop="@dimen/activity_vertical_margin_8"
+
+
+            />
+        <TextView
+            android:id="@+id/tv_right"
+            android:textSize="@dimen/txt_size_20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_category"
+            tools:text="@string/right_answers"
+            android:layout_marginLeft="@dimen/txt_size_12"
+
+            />
+        <TextView
+            android:id="@+id/tv_wrong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/txt_size_20"
+            tools:text="@string/tv_wrong_answer"
+            android:layout_below="@id/tv_right"
+            android:layout_marginLeft="@dimen/txt_size_12"/>
+
+        <Space
+            android:id="@+id/sp_space_02"
+            android:layout_width="550dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_category"
+            />
+
+        <TextView
+            android:id="@+id/tv_point"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_centerVertical="true"
+            tools:text="@string/point"
+            android:textSize="@dimen/txt_size_28"
+            android:layout_alignRight="@id/sp_space_02"
+            android:layout_marginTop="@dimen/activity_vertical_margin_32"
+            />
+
+    </RelativeLayout>
+    <Space
+        android:id="@+id/sp_space"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_below="@id/rl_1"/>
+
+    <TextView
+        android:id="@+id/tv_question"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginLeft="@dimen/txt_size_16"
+        android:layout_marginRight="@dimen/txt_size_16"
+        android:layout_below="@id/sp_space"
+        android:gravity="center"
+        android:textSize="@dimen/txt_size_24"
+        android:background="@drawable/card_background"
+        tools:text="@string/question"
+        />
+
+    <Space
+        android:id="@+id/sp_space_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_question"/>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sp_space_button"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_false"/>
+
+        <Button
+            android:id="@+id/btn_true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_true" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/next" />
+
+    </LinearLayout>
+
+</RelativeLayout>

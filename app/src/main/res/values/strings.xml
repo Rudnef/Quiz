@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Quiz</string>
+    <string name="information">information</string>
+    <string name="question">question</string>
+    <string name="btn_false">false</string>
+    <string name="btn_true">true</string>
+    <string name="next">next</string>
+    <string name="txt_something_wrong">Something Wrong</string>
+    <string name="txt_right_answer">TRUE</string>
+    <string name="txt_wrong_answer">FALSE</string>
+    <string name="txt_right_answer1">1</string>
+    <string name="txt_wrong_answer1">0</string>
+    <string name="point">points: </string>
+    <string name="categoria">categoria </string>
+    <string name="tv_wrong_answer">wrong_answers: </string>
+    <string name="right_answers">right_answers:</string>
+</resources>
