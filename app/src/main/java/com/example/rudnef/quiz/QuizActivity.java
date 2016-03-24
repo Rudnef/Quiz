@@ -13,6 +13,8 @@ import android.widget.Toast;
 public class QuizActivity extends AppCompatActivity {
 
     private SoundPool mSoundPool;
+    private SoundPool mSoundPooltrue;
+    private SoundPool mSoundPoolfalse;
     private int mSoundId = 1;
     private int mStreamId;
 
@@ -38,8 +40,12 @@ public class QuizActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
-        mSoundPool = new SoundPool(4, AudioManager.STREAM_MUSIC, 100);
+        mSoundPool = new SoundPool(3, AudioManager.STREAM_MUSIC, 100);
+        mSoundPooltrue = new SoundPool(3, AudioManager.STREAM_MUSIC, 100);
+        mSoundPoolfalse = new SoundPool(3, AudioManager.STREAM_MUSIC, 100);
         mSoundPool.load(this, R.raw.next, 1);
+        mSoundPooltrue.load(this, R.raw.right, 1);
+        mSoundPoolfalse.load(this, R.raw.wrong, 1);
 
         helper = new QuizHelper(this);
 
@@ -95,11 +101,13 @@ public class QuizActivity extends AppCompatActivity {
         btn_false.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 showResultToastForButton(false);
                 showRightOrWrongAnswer(false);
                 btn_next.setEnabled(true);
                 btn_false.setEnabled(false);
                 btn_true.setEnabled(false);
+
             }
         });
 
@@ -107,6 +115,7 @@ public class QuizActivity extends AppCompatActivity {
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int iiiii;
                 showNextQuestion();
                 btn_next.setEnabled(false);
                 btn_true.setEnabled(true);
@@ -119,8 +128,8 @@ public class QuizActivity extends AppCompatActivity {
                 float rightVolume = curVolume / maxVolume;
                 int priority = 1;
                 int no_loop = 0;
-                float normal_playback_rate = 0.5f;
-                mStreamId = mSoundPool.play(mSoundId, leftVolume, rightVolume, priority, no_loop,
+                float normal_playback_rate = 1f;
+                iiiii = mSoundPool.play(mSoundId, leftVolume, rightVolume, priority, no_loop,
                         normal_playback_rate);
             }
         });
@@ -155,14 +164,18 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     private void showRightOrWrongAnswer(boolean gotAnswer) {
+        int rightAnswer;
+        int wrongAnswer;
 
         if (helper.getRightOrWrongAnswer(gotAnswer).equals("1")) {
             right = right + 1;
             point = point + 1;
             String mright = String.valueOf(right);
             String mpoint = String.valueOf(point);
-            tv_right.setText("неправильных ответов: " + mright);
+            tv_right.setText("правильных ответов: " + mright);
             tv_point.setText("Баллов: " + mpoint);
+            rightAnswer = mSoundPooltrue.play(mSoundId, 1.0f, 1.0f, 1, 0,
+                    1.0f);
         } else if (helper.getRightOrWrongAnswer(gotAnswer).equals("0")) {
             wrong = wrong + 1;
             point = point - 1;
@@ -170,6 +183,8 @@ public class QuizActivity extends AppCompatActivity {
             String mpoint = String.valueOf(point);
             tv_wrong.setText("неправильных ответов: " + mwrong);
             tv_point.setText("Баллов: " + mpoint);
+            rightAnswer = mSoundPoolfalse.play(mSoundId, 1.0f, 1.0f, 1, 0,
+                    1.0f);
         }
     }
 
