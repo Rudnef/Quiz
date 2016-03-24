@@ -1,10 +1,12 @@
 package com.example.rudnef.quiz;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.media.SoundPool;
 import android.os.Build;
 import android.os.Build.VERSION;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -14,7 +16,8 @@ import java.util.ArrayList;
 public class QuizHelper {
     private final static String TYPEFACE = "isocteur.ttf";
     private final static String TYPEBUTTON = "note.ttf";
-    private static final int ANIMATION_DURSTION = 200;
+    private static final int ANIMATION_DURSTION_OFF = 100;
+    private static final int ANIMATION_DURSTION_ON = 1000;
     public static final int MAX_SOUND = 2;
 
     private SoundPool soundPool;
@@ -80,8 +83,26 @@ public class QuizHelper {
     }
 
     public String getRightOrWrongAnswer(boolean answer) {
-                return answer == getCurrentAnswer() ?
-                        context.getString(R.string.txt_right_answer1):
-                        context.getString(R.string.txt_wrong_answer1);
+        return answer == getCurrentAnswer() ?
+                context.getString(R.string.txt_right_answer1) :
+                context.getString(R.string.txt_wrong_answer1);
+    }
+@TargetApi(16)
+    public void animateChanging(final TextView tv_question) {
+        tv_question.animate()
+                .alpha(0.0f)//пропадает от нуля до еденицы
+                .scaleX(0.3f)// маштабирование
+                .scaleY(0.3f)// по оси x и y
+                .setDuration(ANIMATION_DURSTION_OFF)
+                .withEndAction(new Runnable() {
+                    @Override
+                    public void run() {
+                        tv_question.animate().alpha(1.0f)
+                                .scaleX(1.0f)
+                                .scaleY(1.0f)
+                                .setDuration(ANIMATION_DURSTION_ON)
+                                .start();
+                    }
+                });
     }
 }
