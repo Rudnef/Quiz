@@ -1,5 +1,8 @@
 package com.example.rudnef.quiz;
 
+import android.content.Context;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +11,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class QuizActivity extends AppCompatActivity {
+
+    private SoundPool mSoundPool;
+    private int mSoundId = 1;
+    private int mStreamId;
+
 
     private TextView tv_question;
     private TextView tv_category;
@@ -28,6 +36,9 @@ public class QuizActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
+
+        mSoundPool = new SoundPool(4, AudioManager.STREAM_MUSIC, 100);
+        mSoundPool.load(this, R.raw.next, 1);
 
         helper = new QuizHelper(this);
 
@@ -99,6 +110,17 @@ public class QuizActivity extends AppCompatActivity {
                 btn_next.setEnabled(false);
                 btn_true.setEnabled(true);
                 btn_false.setEnabled(true);
+
+                AudioManager audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+                float curVolume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+                float maxVolume = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+                float leftVolume = curVolume / maxVolume;
+                float rightVolume = curVolume / maxVolume;
+                int priority = 1;
+                int no_loop = 0;
+                float normal_playback_rate = 0.5f;
+                mStreamId = mSoundPool.play(mSoundId, leftVolume, rightVolume, priority, no_loop,
+                        normal_playback_rate);
             }
         });
     }

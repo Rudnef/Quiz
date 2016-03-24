@@ -2,6 +2,7 @@ package com.example.rudnef.quiz;
 
 import android.content.Context;
 import android.graphics.Typeface;
+import android.media.SoundPool;
 import android.os.Build;
 import android.os.Build.VERSION;
 
@@ -16,6 +17,7 @@ public class QuizHelper {
     private static final int ANIMATION_DURSTION = 200;
     public static final int MAX_SOUND = 2;
 
+    private SoundPool soundPool;
     private Context context;
     private ArrayList<Card> cards;
     private int currentIndex;
