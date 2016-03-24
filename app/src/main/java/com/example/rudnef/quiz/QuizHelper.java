@@ -13,6 +13,8 @@ import java.util.ArrayList;
 public class QuizHelper {
     private final static String TYPEFACE = "isocteur.ttf";
     private final static String TYPEBUTTON = "note.ttf";
+    private static final int ANIMATION_DURSTION = 200;
+    public static final int MAX_SOUND = 2;
 
     private Context context;
     private ArrayList<Card> cards;
