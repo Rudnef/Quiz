@@ -1,8 +1,10 @@
 package com.example.rudnef.quiz;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.media.AudioManager;
 import android.media.SoundPool;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +19,8 @@ public class QuizActivity extends AppCompatActivity {
     private SoundPool mSoundPoolfalse;
     private int mSoundId = 1;
     private int mStreamId;
+
+
 
 
     private TextView tv_question;
@@ -58,7 +62,6 @@ public class QuizActivity extends AppCompatActivity {
         } else {
             showToast(getString(R.string.txt_something_wrong));
         }
-
     }
 
     private void initializeWidgets() {
@@ -158,7 +161,6 @@ public class QuizActivity extends AppCompatActivity {
     private void showToast(String massage) {
         Toast.makeText(this, massage, Toast.LENGTH_SHORT).show();
     }
-
     private void showNextQuestion() {
         helper.animateChanging(tv_question);
         tv_question.setText(helper.getNextQuestion());
